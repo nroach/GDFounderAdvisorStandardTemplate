@@ -44,17 +44,16 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
                 out.setdefault(package, []).append(prefix+name)
     return out
 
-setup(name='docassemble.FounderAdvisorStandardTemplate',
+setup(name='GDFounderAdvisorStandardTemplate',
       version='1.0',
       description=('Founder Advisor Agreement (FAST)'),
-      author=u' Administrator',
+      author=u' Nathan Roach',
       author_email=u'nathan+admin@gooddocs.io',
       license='The MIT License',
-      url='http://docassemble.org',
+      url='http://gooddocs.io',
       packages=find_packages(),
       namespace_packages = ['docassemble'],
       install_requires = ['docassemble', 'docassemble.base'],
       zip_safe = False,
-      package_data=find_package_data(where='docassemble/FounderAdvisorStandardTemplate/', package='docassemble.FounderAdvisorStandardTemplate'),
+      package_data=find_package_data(where='docassemble/FounderAdvisorStandardTemplate/', package='GDFounderAdvisorStandardTemplate'),
      )
-

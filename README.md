@@ -1,8 +1,7 @@
-# docassemble.FounderAdvisorStandardTemplate
+# GDFounderAdvisorStandardTemplate
 
 Founder Advisor Agreement (FAST)
 
 ## Author
 
- Administrator, nathan+admin@gooddocs.io
-
+ Nathan Roach, nathan+admin@gooddocs.io
