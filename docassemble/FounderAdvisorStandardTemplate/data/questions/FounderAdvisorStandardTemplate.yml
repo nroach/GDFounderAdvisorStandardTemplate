@@ -1,0 +1,144 @@
+metadata:
+  title: Founder Advisor Agreement (FAST)
+  short title: FAST
+---
+mandatory: True
+code: |
+  all_done
+---
+question: |
+  How long will it take the Advisor to earn his or her equity?
+subquestion: |
+  The Advisor's shares will be earned through continuous service over time (the "vesting period").  The vesting period is typically three or four years for most technology startups.
+fields:
+  - 'Vesting Period': vesting_period
+---
+question: |
+  What is your Advisor's full legal name?
+subquestion: |
+  Example: John H. Doe, Jr., Esq.
+fields:
+  - "Advisor's Full Legal Name": Advisor_Name
+---
+signature: Company_Signor_Signature
+question: |
+  Signature of authorized Company Officer
+under: |
+  for ${ Company_Name }
+---
+question: |
+  What is the total number of shares that will be earned by your Advisor?
+subquestion: |
+  This is the Advisor's percentage multiplied by the number of outstanding shares of Common Stock calculated on a fully-diluted basis of all outstanding and convertible or issuable securities. If the Company's capitalization structure is currently unknown, fill in 'TBD' above.
+fields:
+  - 'Number of Shares Earnable': Share_Quantity
+    datatype: integer
+---
+question: |
+  What is ${ Company_Signor }'s title?
+subquestion: |
+  This is the title or role of the person signing on behalf of the company.
+fields:
+  - 'Title': Company_Signor_Title
+---
+question: |
+  What is ${ Company_Name }'s mailing address?
+subquestion: |
+  The postal mailing address for the Company, and address to which legal notices are sent.
+fields:
+  - 'Company Address': Company_Address
+    datatype: area
+---
+question: |
+  Who is signing on behalf of ${ Company_Name }?
+subquestion: |
+  The name of the person signing this agreement for the Company.
+fields:
+  - 'Name': Company_Signor
+---
+question: |
+  What stage is the Company at?
+subquestion: |
+  See Schedule A for descriptions of the stages of company development.  You may choose from `Idea Stage`, `Startup Stage`, and `Growth Stage`.
+fields:
+  - 'Company Stage': Company_Stage
+---
+code: |
+  import time
+  Effective_Date = time.strftime("%m/%d/%Y")
+---
+question: |
+  The laws of which State should govern this Agreement?
+subquestion: |
+  Usually this is the State in which the Company has its primary place of business or in which the services are to be performed.
+fields:
+  - 'State': State
+---
+question: |
+  How long must the Advisor serve before any equity is granted?
+subquestion: |
+  This is the minimum amount of time that the Advisor must provide continuous advisory services to the Company before being eligible for earning equity.
+fields:
+  - 'Initial Term': initial_term
+---
+code: |
+  cliff_duration = initial_term
+---
+sets: all_done
+question: |
+  Your FAST Agreement is ready for legal review.
+subquestion: |
+  Please review this agreement with your legal counsel prior to signature.
+buttons:
+  - Exit: exit
+  - Restart: restart
+attachments:
+  - name: Founder Advisor Standard Template Agreement 27GD
+    filename: Founder_Advisor_Standard_Template_Agreement_27GD
+    content: ${ FounderAdvisorStandardTemplatev27GD }
+---
+question: |
+  What performance level will the Advisor commit to?
+subquestion: |
+  See Schedule A for a description of performance levels.  You may choose from `Standard`, `Strategic`, or `Expert`.
+fields:
+  - "Advisor's Postal Address": Advisor_Performance_Level
+---
+question: |
+  What is ${ Advisor_Name }'s address?
+subquestion: |
+  You should use your advisor's full postal mailing address, or the address to which legal notices will be sent.
+fields:
+  - 'Advisor Mailing Address': Advisor_Address
+    datatype: area
+---
+template: FounderAdvisorStandardTemplatev27GD
+content file: FounderAdvisorStandardTemplatev27GD.md
+---
+signature: Advisor_Signor_Signature
+question: |
+  Agreed and Accepted by:
+under: |
+  ${ Advisor_Name }, Advisor
+---
+question: |
+  What type of equity issued to Advisor?
+subquestion: |
+  Depending upon your company's structure, this could be any of of the following: `Common Shares`, `Preferred Shares`, `Membership Interests`, `Partnership Interests`, `Stock Options` or other valid equity instruments.
+fields:
+  - 'Securities Issued:': Type_of_Security
+---
+question: |
+  What is your Company's Name?
+subquestion: |
+  Usually the full legal name of your company.
+fields:
+  - 'Company Name': Company_Name
+---
+question: |
+  What percentage of the unvested shares should immediately be vested on Company Sale?
+subquestion: |
+  _explanation pending_
+fields:
+  - 'Acceleration Percentage': vesting_acceleration_percentage
+    datatype: number
